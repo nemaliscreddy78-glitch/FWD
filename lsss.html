@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Async/Await Fetch Example</h2>
+<button onclick="getPosts()">Get Posts</button>
+<ul id="postList"></ul>
+<script>
+async function getPosts() {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+        let data = await response.json();
+        let list = document.getElementById("postList");
+        list.innerHTML = "";
+        data.slice(0, 5).forEach(function(post) {
+            let li = document.createElement("li");
+            li.textContent = post.title;
+            list.appendChild(li);
+        });
+    } catch(error) {
+        console.log("Error:", error);
+    }
+}
+</script>
+</body>
+</html>

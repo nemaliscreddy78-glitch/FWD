@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML DOM</h2>
+
+<p>PARA 1</p>
+<h1>h1 header</h1>
+
+<b>HIIII</b>
+<br><br>
+<button onclick="changetext()"> CHANGE BY ELEMENT</button>
+
+<script>
+function changetext(){
+// Select paragraph (first p element)
+const sp = document.getElementsByTagName("p")[0];
+
+// Change paragraph color
+sp.style.color = "green";
+
+// Select h1 (first h1 element)
+const sh = document.getElementsByTagName("h1")[0];
+
+// Change h1 color
+sh.style.color = "purple";
+
+// Select b (first b element)
+const sb = document.getElementsByTagName("b")[0];
+
+// Change b color
+sb.style.color = "orange";
+
+}
+
+</script>
+
+</body>
+</html>

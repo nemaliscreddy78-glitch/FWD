@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Promise Example</h2>
+<button onclick="checkAge()">Check Age</button>
+<p id="output"></p>
+<script>
+function checkAge() {
+    let promise = new Promise(function(resolve, reject) {
+        let age = 20;
+        if (age >= 18) {
+            resolve("You are eligible to vote.");
+        } else {
+            reject("You are not eligible.");
+       }
+    });
+    promise
+        .then(function(message) {
+            document.getElementById("output").textContent = message;
+        })
+        .catch(function(error) {
+            document.getElementById("output").textContent = error;
+        });
+}
+</script>
+</body>
+</html>

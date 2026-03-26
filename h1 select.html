@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Select Element by CSS Style</h2>
+
+<p style="color:red;">This paragraph has inline style</p>
+
+<button onclick="selectByStyle()">Select Styled Element</button>
+
+<script>
+function selectByStyle(){
+    let element = document.querySelector("p[style]");
+    element.style.color = "blue";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="addParagraph()">Add Paragraph</button><br><br>
+<button onclick="addh1()">Add h1</button><br>
+
+<div id="container"></div>
+<script>
+function addParagraph() {
+    let p = document.createElement("p");
+    p.innerHTML = "New Paragraph Added!";
+document.getElementById("container").appendChild(p);
+}
+
+function addh1() {
+    let h1e = document.createElement("h1");
+    h1e.innerHTML = "New h1 header Added!";
+document.getElementById("container").appendChild(h1e);
+}
+
+</script>
+
+</body>
+</html>

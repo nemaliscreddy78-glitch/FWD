@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM & Events Demo</title>
+    <style>
+        body { font-family: Arial; }
+        .box { margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<h2>DOM & Events Example</h2>
+
+<!-- CLICK EVENT -->
+<button id="clickBtn">Click Me</button>
+<p id="clickOutput">CLICK EVENT EXAMPLE</p>
+
+<!-- INPUT EVENT -->
+<input type="text" id="nameInput" placeholder="Type your name">
+<p id="inputOutput"></p>
+
+<!-- CHANGE EVENT -->
+<select id="colorSelect">
+    <option value="">Select Color</option>
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>
+</select>
+
+<!-- SUBMIT EVENT -->
+<form id="myForm">
+    <input type="text" id="email" placeholder="Enter Email">
+    <button type="submit">Submit</button>
+</form>
+<p id="formOutput"></p>
+
+<script>
+
+// CLICK EVENT
+document.getElementById("clickBtn")
+.addEventListener("click", function() {
+    document.getElementById("clickOutput").textContent = "Button Clicked!";
+});
+
+// INPUT EVENT
+document.getElementById("nameInput")
+.addEventListener("input", function() {
+    document.getElementById("inputOutput").textContent =
+        "Hello " + this.value;
+});
+
+// CHANGE EVENT
+document.getElementById("colorSelect")
+.addEventListener("change", function() {
+    document.body.style.backgroundColor = this.value;
+});
+
+// SUBMIT EVENT
+document.getElementById("myForm")
+.addEventListener("submit", function(event) {
+    event.preventDefault(); // prevent page reload
+    let email = document.getElementById("email").value;
+    document.getElementById("formOutput").innerHTML =
+        "<b>Email Submitted:</b> " + email;
+});
+
+</script>
+
+</body>
+</html>
